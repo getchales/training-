@@ -1,14 +1,12 @@
-const express = require('express');
-const app1 = express();
-const port = 3001;
+const p1 = require('./pattern1');
+const p2 = require('./pattern2').getName;
+const p3 = require('./pattern3');
+const Person = require('./pattern4');
+const p5 = require('./pattern5').getName;
+const personObj4 = new Person();
 
-app1.get("*", function (require, response) {
-    response.status(200);
-    response.set('Content-Type', 'text/html');
-    response.send('Hello world');
-    response.end();
-});
-
-app1.listen(port, function () {
-    console.log("The server is running")
-})
+p1();
+p2();
+p3.getName()
+personObj4.getName()
+p5();
